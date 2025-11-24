@@ -4,5 +4,11 @@
 	(generator_version "9.0")
 	(uuid "88de6455-3cfb-4273-997b-c5a6ca3db793")
 	(paper "A4")
+	(title_block
+		(title "UPL-B1: OUTPUT IMD ATTENUATOR")
+		(date "2025-11-24")
+		(rev "1.0")
+		(company "BVKSound")
+	)
 	(lib_symbols)
 )

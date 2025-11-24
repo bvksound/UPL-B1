@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "812de09b-8b67-463d-bf96-bb3aeeb1ed8d")
 	(paper "A2")
+	(title_block
+		(title "UPL-B1: Block Diagram")
+		(date "2025-11-24")
+		(rev "1.0")
+		(company "BVKSound")
+	)
 	(lib_symbols)
 	(image
 		(at 298.45 139.7)

@@ -4,5 +4,11 @@
 	(generator_version "9.0")
 	(uuid "e64037c9-a989-4ca2-a484-1d08458c8d64")
 	(paper "A4")
+	(title_block
+		(title "UPL-B1: Level Control (ALC)")
+		(date "2025-11-24")
+		(rev "1.0")
+		(company "BVKSound")
+	)
 	(lib_symbols)
 )
