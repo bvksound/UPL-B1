@@ -246,8 +246,12 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
-    "pinned_symbol_libs": []
+    "pinned_footprint_libs": [
+      "UPL_B1"
+    ],
+    "pinned_symbol_libs": [
+      "UPL_B1"
+    ]
   },
   "meta": {
     "filename": "UPL_B1.kicad_pro",
