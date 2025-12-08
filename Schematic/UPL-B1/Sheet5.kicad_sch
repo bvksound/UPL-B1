@@ -10451,7 +10451,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "14766189-24d3-493b-bd9f-7246b76654b0")
-		(property "Reference" "V1"
+		(property "Reference" "V504"
 			(at 173.99 166.37 90)
 			(effects
 				(font
@@ -10533,7 +10533,7 @@
 		(instances
 			(project "UPL-B1"
 				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d/6f377b57-c1d4-477b-840b-189645bd7d4e"
-					(reference "V1")
+					(reference "V504")
 					(unit 1)
 				)
 			)
@@ -11971,7 +11971,7 @@
 				)
 			)
 		)
-		(property "Value" "8p2"
+		(property "Value" "8p2F"
 			(at 131.064 195.834 0)
 			(effects
 				(font
@@ -13024,7 +13024,7 @@
 				)
 			)
 		)
-		(property "Value" "3n3"
+		(property "Value" "3n3F"
 			(at 197.612 274.828 90)
 			(effects
 				(font
@@ -13908,7 +13908,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "2u2"
+		(property "Value" "2u2F"
 			(at 118.11 250.444 90)
 			(effects
 				(font
@@ -19861,7 +19861,7 @@
 				)
 			)
 		)
-		(property "Value" "4p7"
+		(property "Value" "4p7F"
 			(at 139.7063 168.91 90)
 			(effects
 				(font

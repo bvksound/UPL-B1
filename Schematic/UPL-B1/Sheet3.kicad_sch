@@ -12516,7 +12516,7 @@
 				)
 			)
 		)
-		(property "Value" "3p9"
+		(property "Value" "3p9F"
 			(at 135.89 283.2037 0)
 			(effects
 				(font
@@ -13591,7 +13591,7 @@
 				)
 			)
 		)
-		(property "Value" "3p9"
+		(property "Value" "3p9F"
 			(at 528.3263 275.59 90)
 			(effects
 				(font
@@ -14390,7 +14390,7 @@
 				)
 			)
 		)
-		(property "Value" "3p9"
+		(property "Value" "3p9F"
 			(at 194.3163 292.1 90)
 			(effects
 				(font
@@ -14555,7 +14555,7 @@
 				)
 			)
 		)
-		(property "Value" "33n 63V 1% FKP"
+		(property "Value" "33nF 63V 1% FKP"
 			(at 345.186 111.76 90)
 			(effects
 				(font
@@ -15133,7 +15133,7 @@
 				)
 			)
 		)
-		(property "Value" "3p9"
+		(property "Value" "3p9F"
 			(at 478.79 273.0437 0)
 			(effects
 				(font
@@ -16880,7 +16880,7 @@
 				)
 			)
 		)
-		(property "Value" "3p3"
+		(property "Value" "3p3F"
 			(at 471.17 128.016 90)
 			(effects
 				(font
@@ -17081,7 +17081,7 @@
 				)
 			)
 		)
-		(property "Value" "3p9"
+		(property "Value" "3p9F"
 			(at 532.13 116.586 90)
 			(effects
 				(font
@@ -17653,7 +17653,7 @@
 				)
 			)
 		)
-		(property "Value" "3p9"
+		(property "Value" "3p9F"
 			(at 528.3263 168.91 90)
 			(effects
 				(font
@@ -18849,7 +18849,7 @@
 				)
 			)
 		)
-		(property "Value" "2n2 100V 1% FKP"
+		(property "Value" "2n2F 100V 1% FKP"
 			(at 344.17 139.7 90)
 			(effects
 				(font
@@ -21385,7 +21385,7 @@
 				)
 			)
 		)
-		(property "Value" "560p"
+		(property "Value" "560pF"
 			(at 303.53 158.75 90)
 			(effects
 				(font
