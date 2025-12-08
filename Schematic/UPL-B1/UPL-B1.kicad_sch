@@ -11,6 +11,19 @@
 		(company "BVKSound")
 	)
 	(lib_symbols)
+	(text "TODO\n-Digital Ground vs Analog ground? Today everything is using digital ground.\n==> How was the B5 configured?\n-Finish hierarchical layout on Root page and double check all in and outputs\n-Start checking all components for availability\n"
+		(exclude_from_sim no)
+		(at 199.136 312.674 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+				(thickness 1.016)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "139778b8-6161-4bbb-a3e6-ce880cf80d94")
+	)
 	(image
 		(at 298.45 139.7)
 		(uuid "3ddad9fb-7a0e-4f47-a85a-8406b79bab31")
