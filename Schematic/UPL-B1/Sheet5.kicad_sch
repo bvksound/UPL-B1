@@ -5041,7 +5041,7 @@
 		)
 		(uuid "1a71298f-9cd3-4ed4-be09-095f8c205634")
 	)
-	(text "SHEET 6"
+	(text "SHEET 2"
 		(exclude_from_sim no)
 		(at 321.564 274.32 0)
 		(effects
@@ -9294,7 +9294,7 @@
 		(uuid "8b067103-cf40-4ec4-8927-6a5b367fabfc")
 	)
 	(hierarchical_label "FREQ_ENA"
-		(shape output)
+		(shape input)
 		(at 317.5 270.51 0)
 		(effects
 			(font
