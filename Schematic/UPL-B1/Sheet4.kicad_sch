@@ -5827,225 +5827,115 @@
 		)
 		(uuid "fffea9e4-3bd7-423c-9bdf-bf548074f33d")
 	)
-	(global_label "SIN"
-		(shape output)
-		(at 388.62 121.92 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "17cb09b4-f270-41f4-868e-c64436a60797")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 394.75 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "FRQ RG1"
-		(shape input)
-		(at 295.91 93.98 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "25304af5-2759-4434-a6be-59defd58ff4b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 284.5186 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "~{WR}"
-		(shape input)
-		(at 128.27 252.73 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "28845c6d-6382-497f-9d8b-2d99bff11c37")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 133.9766 252.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "WR"
-		(shape input)
-		(at 242.57 210.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "402b6edd-d4e8-4f74-a00f-19c3a26ecb12")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 236.8634 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "FRQ RG2"
-		(shape input)
-		(at 295.91 59.69 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "61a10ce2-9f82-4214-b6af-e736b6652996")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 284.5186 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CLK"
+	(hierarchical_label "CLK"
 		(shape input)
 		(at 72.39 252.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "646806f8-0430-40b0-bafa-4c6e4bfd4dbd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 65.8367 252.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "13beb66d-e14f-4a39-9bdf-826c00ac57cf")
 	)
-	(global_label "CLK"
+	(hierarchical_label "WR"
 		(shape input)
-		(at 242.57 215.9 180)
-		(fields_autoplaced yes)
+		(at 242.57 210.82 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "6e2979e3-920a-439f-a164-d6c699422713")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 236.0167 215.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "513280fb-f32b-48aa-8869-6112b8c5e88a")
 	)
-	(global_label "SD1"
+	(hierarchical_label "{slash}WR"
 		(shape input)
-		(at 72.39 250.19 180)
-		(fields_autoplaced yes)
+		(at 128.27 252.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "a46dd6bd-73fa-4b42-905b-f86eff6e0ccf")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 65.7158 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "678d8c73-7d11-4187-91aa-57f4f96cc9bf")
 	)
-	(global_label "LOOP"
+	(hierarchical_label "LOOP"
 		(shape input)
 		(at 25.4 39.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "d13b8633-0cb3-46cc-9d9f-82907bf493e1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 17.4557 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "7d2ed69c-764e-4d11-8898-9ce9f20a6934")
 	)
-	(global_label "FRQ RG3"
+	(hierarchical_label "SIN"
+		(shape output)
+		(at 388.62 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "831295c5-d1de-461c-8c35-76be9daf54ea")
+	)
+	(hierarchical_label "FRQ_RG3"
+		(shape input)
+		(at 295.91 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a1e97539-f686-4020-8db3-c192f74f1acd")
+	)
+	(hierarchical_label "FRQ_RG3"
 		(shape input)
 		(at 295.91 22.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "e76dce84-33f7-435b-a1a3-d69067e778b1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 284.5186 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
+		(uuid "ceac1062-7b17-459b-b7c7-526f942a4a03")
+	)
+	(hierarchical_label "FRQ_RG2"
+		(shape input)
+		(at 295.91 59.69 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
+		(uuid "cef00bf3-c7ef-45c6-bb79-baa224369f85")
+	)
+	(hierarchical_label "SD1"
+		(shape input)
+		(at 72.39 250.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cf011c24-6f24-41f3-9cf0-4511710e8b1b")
+	)
+	(hierarchical_label "CLK"
+		(shape input)
+		(at 242.57 215.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e2260740-2c32-4bc8-8697-d4e4de81c88b")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -6613,7 +6503,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_JFETs"
+		(property "Datasheet" "https://www.nxp.com/docs/en/data-sheet/BSR56_57_58.pdf"
 			(at 110.49 152.4 0)
 			(effects
 				(font
@@ -7438,7 +7328,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BC859_BC860.pdf"
 			(at 81.28 49.53 0)
 			(effects
 				(font
@@ -8659,7 +8549,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BC859_BC860.pdf"
 			(at 81.28 160.02 0)
 			(effects
 				(font
@@ -9761,7 +9651,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BC859_BC860.pdf"
 			(at 81.28 83.82 0)
 			(effects
 				(font
@@ -9964,7 +9854,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_JFETs"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/906/J105%2C6%2C7.pdf"
 			(at 110.49 41.91 0)
 			(effects
 				(font
@@ -10064,7 +9954,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BC859_BC860.pdf"
 			(at 81.28 119.38 0)
 			(effects
 				(font
@@ -10638,7 +10528,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_JFETs"
+		(property "Datasheet" "https://www.nxp.com/docs/en/data-sheet/BSR56_57_58.pdf"
 			(at 110.49 111.76 0)
 			(effects
 				(font
