@@ -24948,6 +24948,86 @@
 				(justify left top)
 			)
 		)
+		(pin "CLK" input
+			(at 212.09 49.53 0)
+			(uuid "5159ea37-bbec-4bd8-909b-7d133a3e1477")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "FRQ_RG2" input
+			(at 212.09 90.17 0)
+			(uuid "125ce13b-0fda-4b4c-b42e-d1b1bafc2c8a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "FRQ_RG3" input
+			(at 212.09 92.71 0)
+			(uuid "ad96c4c9-8a4f-45b3-9330-f2f39141269d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LOOP" input
+			(at 157.48 73.66 180)
+			(uuid "02bcf487-325c-4e90-9b3e-380f44802f96")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SD1" input
+			(at 212.09 95.25 0)
+			(uuid "29de50b8-7581-4bc8-aa7e-34637292dce0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SIN" output
+			(at 212.09 73.66 0)
+			(uuid "06976dcc-6ad0-4de7-abe5-d89468104dd2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "WR" input
+			(at 212.09 52.07 0)
+			(uuid "875ac776-9274-4847-b8c1-d2ae345edb06")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "{slash}WR" input
+			(at 212.09 54.61 0)
+			(uuid "aee723d9-e44e-46ad-8c0b-39579cce5182")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "UPL-B1"
 				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d"
@@ -25073,6 +25153,116 @@
 				(justify left top)
 			)
 		)
+		(pin "ALC" output
+			(at 420.37 129.54 270)
+			(uuid "50454306-a014-4ea6-a05e-fed094f64234")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CLK" input
+			(at 260.35 49.53 180)
+			(uuid "883d9a2d-ba36-4733-9966-255f9b125cd1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "COS" output
+			(at 439.42 59.69 0)
+			(uuid "1a7bc2cf-3e26-40bd-b2fe-65b20e21d5de")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "FRQ_RG1" input
+			(at 260.35 87.63 180)
+			(uuid "ceaf8e87-cdd9-4a5a-a1e4-5eb5b09f6e4a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FRQ_RG2" input
+			(at 260.35 90.17 180)
+			(uuid "0a45d232-f6fc-4dce-a7cb-97b270c1c9b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FRQ_RG3" input
+			(at 260.35 92.71 180)
+			(uuid "6c02bb25-f653-46e7-9f39-21963240c8f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LOOP" output
+			(at 434.34 30.48 90)
+			(uuid "5f079731-a76a-4e2a-bfdb-95bd09adb649")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD1" input
+			(at 260.35 95.25 180)
+			(uuid "910608cb-41c5-43ff-9b47-285c2d31ca9f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SD2" output
+			(at 377.19 129.54 270)
+			(uuid "10e2c40e-071d-43a1-90f6-25a5ae1dcf72")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SIN" input
+			(at 260.35 73.66 180)
+			(uuid "6a577e39-e031-49b9-b265-ffb7ffe3d7f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{slash}WR" input
+			(at 260.35 52.07 180)
+			(uuid "4ec61e4b-aafe-4aae-a0a3-bd63ed8c2abb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "UPL-B1"
 				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d"
@@ -25113,6 +25303,136 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "CLK" input
+			(at 490.22 31.75 90)
+			(uuid "d8f3008a-f22a-46f0-862b-ca55f823192e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "COS" input
+			(at 466.09 60.96 180)
+			(uuid "a010b272-3be2-4929-89a3-6fe1fd2ce69e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENABLE" input
+			(at 532.13 31.75 90)
+			(uuid "685fe554-5e33-487d-8bf5-4c2f1cb4f0fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "FILT" output
+			(at 546.1 66.04 0)
+			(uuid "0505f561-9840-4bbc-bee9-e17939967332")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "FREQ_ENA" output
+			(at 535.94 31.75 90)
+			(uuid "177eb382-660b-4c75-a932-c56a1c64cf00")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LOFILT" output
+			(at 539.75 31.75 90)
+			(uuid "9a26bc4d-a755-4012-9cea-76cf3a242ed0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LOW DIST" output
+			(at 546.1 77.47 0)
+			(uuid "e792e6ef-fe2e-457e-ac05-df30fe2cb3ea")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD2" input
+			(at 546.1 87.63 0)
+			(uuid "ff8e0fa5-479b-4177-98d1-d52bd195e396")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDI" input
+			(at 546.1 90.17 0)
+			(uuid "a892172c-097f-468b-973f-cab56c2c9006")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDO" output
+			(at 546.1 92.71 0)
+			(uuid "ee5b842b-a495-495b-8e8e-0494ee4d479c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "WR" output
+			(at 492.76 31.75 90)
+			(uuid "06f5d225-666d-45da-aefb-c464fad9ac41")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{RD}" output
+			(at 495.3 31.75 90)
+			(uuid "5ecdd45f-70db-497c-a182-add0bc0e2a0b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{WR}" input
+			(at 497.84 31.75 90)
+			(uuid "c0c0e0e3-e5b3-47da-af56-d706d39a56a6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

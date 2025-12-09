@@ -22015,7 +22015,7 @@
 		(lib_id "Amplifier_Operational:TL072")
 		(at 314.96 316.23 0)
 		(mirror x)
-		(unit 2)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -22092,7 +22092,7 @@
 			(project "UPL-B1"
 				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d/6f377b57-c1d4-477b-840b-189645bd7d4e"
 					(reference "N53")
-					(unit 2)
+					(unit 1)
 				)
 			)
 		)

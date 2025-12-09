@@ -4287,6 +4287,10 @@
 		(color 0 0 0 0)
 		(uuid "ff2e078e-4d65-4a58-9f15-567647d28f0b")
 	)
+	(no_connect
+		(at 518.16 274.32)
+		(uuid "8f35a218-e384-4a35-bbde-8147e7e966f5")
+	)
 	(wire
 		(pts
 			(xy 302.26 129.54) (xy 313.69 129.54)
@@ -8837,7 +8841,7 @@
 		(uuid "47e02adb-5d66-486d-b5d9-65ff71d12168")
 	)
 	(hierarchical_label "FRQ_RG1"
-		(shape input)
+		(shape output)
 		(at 226.06 44.45 180)
 		(effects
 			(font
@@ -8848,7 +8852,7 @@
 		(uuid "4b5d4766-f5d2-4bef-899a-fa6b4d469ffd")
 	)
 	(hierarchical_label "FRQ_RG3"
-		(shape input)
+		(shape output)
 		(at 226.06 62.23 180)
 		(effects
 			(font
@@ -8903,7 +8907,7 @@
 		(uuid "e0234ddd-5247-4bda-84ea-af0b22bce996")
 	)
 	(hierarchical_label "FRQ_RG2"
-		(shape input)
+		(shape output)
 		(at 226.06 53.34 180)
 		(effects
 			(font
