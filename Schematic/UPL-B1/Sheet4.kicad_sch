@@ -5882,7 +5882,7 @@
 		)
 		(uuid "831295c5-d1de-461c-8c35-76be9daf54ea")
 	)
-	(hierarchical_label "FRQ_RG3"
+	(hierarchical_label "FRQ_RG1"
 		(shape input)
 		(at 295.91 93.98 180)
 		(effects
