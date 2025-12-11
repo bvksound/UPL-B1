@@ -4438,6 +4438,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Renamed, beacuse \n/WR and /WR are \nobviously buffered here!"
+		(exclude_from_sim no)
+		(at 24.384 182.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2a09f5da-b5c5-4455-9ba9-5b828fe79eb0")
+	)
 	(text "IMD ATTEN"
 		(exclude_from_sim no)
 		(at 303.022 30.48 0)
@@ -4677,6 +4687,30 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fc4d141f-e074-4500-902d-94ce4973a4e1")
+	)
+	(no_connect
+		(at 367.03 195.58)
+		(uuid "137d7e20-e6cf-46f3-b5dc-b67b2f28a37b")
+	)
+	(no_connect
+		(at 114.3 142.24)
+		(uuid "5643526b-f26f-4241-abf8-c859f75e62cb")
+	)
+	(no_connect
+		(at 114.3 132.08)
+		(uuid "87fb1140-3486-4b43-af26-c66ca80b0ba1")
+	)
+	(no_connect
+		(at 114.3 144.78)
+		(uuid "b10dd8c5-c447-4127-983e-90c4b6044e31")
+	)
+	(no_connect
+		(at 114.3 139.7)
+		(uuid "bc8790eb-771d-4987-abfd-b91383931ecd")
+	)
+	(no_connect
+		(at 114.3 152.4)
+		(uuid "c12b03fb-24e1-4395-967d-696eadaeb3ef")
 	)
 	(wire
 		(pts
@@ -6580,7 +6614,7 @@
 		)
 		(uuid "18a5a299-d5be-40ce-ba06-a0b57f0dae05")
 	)
-	(hierarchical_label "~{WR}"
+	(hierarchical_label "~{IN_WR}"
 		(shape input)
 		(at 22.86 189.23 180)
 		(effects
@@ -6624,7 +6658,7 @@
 		)
 		(uuid "31a428f5-4625-4865-b0ff-0267a76ecce0")
 	)
-	(hierarchical_label "SDI"
+	(hierarchical_label "IN_SDI"
 		(shape input)
 		(at 24.13 142.24 180)
 		(effects
@@ -6690,7 +6724,7 @@
 		)
 		(uuid "843d74a0-5ccf-4d40-b815-a3d4e4e905e6")
 	)
-	(hierarchical_label "~{RD}"
+	(hierarchical_label "~{IN_RD}"
 		(shape input)
 		(at 22.86 223.52 180)
 		(effects
@@ -6734,7 +6768,7 @@
 		)
 		(uuid "eae8bb00-c53e-409c-9b17-a1f3b5bb1475")
 	)
-	(hierarchical_label "CLK"
+	(hierarchical_label "IN_CLK"
 		(shape input)
 		(at 22.86 205.74 180)
 		(effects
@@ -9379,7 +9413,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5cf3592b-7eb3-4867-b019-c001f75781a8")
-		(property "Reference" "U1"
+		(property "Reference" "D21"
 			(at 106.2833 121.92 0)
 			(effects
 				(font
@@ -9475,7 +9509,7 @@
 		(instances
 			(project ""
 				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d/daa8f8c7-f164-4600-9939-51b125d2037c"
-					(reference "U1")
+					(reference "D21")
 					(unit 1)
 				)
 			)

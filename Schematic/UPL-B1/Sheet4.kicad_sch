@@ -3710,6 +3710,30 @@
 		(color 0 0 0 0)
 		(uuid "fe913969-86bf-4633-8ff6-d4e5c47188d4")
 	)
+	(no_connect
+		(at 267.97 210.82)
+		(uuid "3388be08-b444-44e9-9c20-c9aebba6793a")
+	)
+	(no_connect
+		(at 267.97 215.9)
+		(uuid "6ed0db48-9e83-48fe-9bd8-ca244845c3d9")
+	)
+	(no_connect
+		(at 267.97 223.52)
+		(uuid "a4bfa534-6b2f-4732-97a4-5a72556b9676")
+	)
+	(no_connect
+		(at 267.97 213.36)
+		(uuid "c43551f8-b7e5-42a1-af75-519a9eedb945")
+	)
+	(no_connect
+		(at 267.97 220.98)
+		(uuid "d3fe96c0-f94b-4663-9864-5452c97e2c29")
+	)
+	(no_connect
+		(at 267.97 208.28)
+		(uuid "f877a832-0ccc-4569-8143-1d3ab746fa1e")
+	)
 	(wire
 		(pts
 			(xy 276.86 86.36) (xy 276.86 203.2)

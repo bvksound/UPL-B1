@@ -5021,6 +5021,122 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 406.4 167.64)
+		(end 579.882 275.082)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 17b95dff-4fb0-4be1-aefc-204aeb14d915)
+	)
+	(rectangle
+		(start 53.848 91.186)
+		(end 102.616 138.938)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 1d6958fd-2360-450d-9693-e49cb9068f81)
+	)
+	(rectangle
+		(start 149.352 109.728)
+		(end 235.458 172.72)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 90649d79-1750-46df-a6d0-9467e50f5ceb)
+	)
+	(rectangle
+		(start 147.32 187.96)
+		(end 288.29 299.72)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid be53d81d-48f2-4af0-8498-c11172097665)
+	)
+	(rectangle
+		(start 109.474 109.728)
+		(end 148.082 181.356)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid cbb267bc-906e-41a4-8104-963d2162ca7f)
+	)
+	(rectangle
+		(start 47.752 234.188)
+		(end 145.034 308.102)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid f0e0a89c-1c15-4fcc-b970-72294857040a)
+	)
+	(rectangle
+		(start 245.11 109.728)
+		(end 326.39 172.974)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid f3ecbeb8-cacf-4082-b99f-eb911b1baec2)
+	)
+	(rectangle
+		(start 327.66 115.062)
+		(end 399.542 161.798)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid fa2f7dea-f2b3-4124-a145-77204704b839)
+	)
+	(text "Regler\nStabilizer"
+		(exclude_from_sim no)
+		(at 364.744 112.268 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "06abbc64-2995-4298-a57c-b91e6e2e9b30")
+	)
+	(text "Schmitt-Trigger"
+		(exclude_from_sim no)
+		(at 95.25 310.134 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0f9dda81-d540-487d-be5d-17e98af7ab6c")
+	)
 	(text "SHEET 2"
 		(exclude_from_sim no)
 		(at 40.386 196.342 0)
@@ -5093,6 +5209,26 @@
 		)
 		(uuid "64ec66dc-a106-417e-837b-17b629a96b03")
 	)
+	(text "Sampler 1"
+		(exclude_from_sim no)
+		(at 160.782 108.712 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "697f8c24-b901-4447-a20d-076cebd6353e")
+	)
+	(text "Sampler 2"
+		(exclude_from_sim no)
+		(at 260.35 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7100c0a8-27c8-47b3-88f5-19ff5ccb7596")
+	)
 	(text "-6V2"
 		(exclude_from_sim no)
 		(at 90.17 108.712 0)
@@ -5102,6 +5238,16 @@
 			)
 		)
 		(uuid "74b3525f-f17f-441d-9d59-93f2cc9050bf")
+	)
+	(text "Offset"
+		(exclude_from_sim no)
+		(at 126.746 108.458 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8b453ec1-1cc3-433e-bcea-8e78354fa708")
 	)
 	(text "SHEET 3/4"
 		(exclude_from_sim no)
@@ -5132,6 +5278,36 @@
 			)
 		)
 		(uuid "bc4eb7b7-84e3-4830-afb5-fb4b4aca3a93")
+	)
+	(text "Pegelregler\nLevel control"
+		(exclude_from_sim no)
+		(at 487.172 165.354 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c0819315-a7ee-4715-93fd-0a6db9fe4c52")
+	)
+	(text "Offset-Referenzspannung\nOffset voltage reference"
+		(exclude_from_sim no)
+		(at 76.962 89.154 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cf5633e1-99f2-4603-beae-7b67e1254a0b")
+	)
+	(text "T&H - Steuerung\nSample & Hold control"
+		(exclude_from_sim no)
+		(at 273.304 302.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d08d0d6c-3263-4cab-bd9b-d103ac8c87e9")
 	)
 	(junction
 		(at 92.71 148.59)
