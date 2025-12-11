@@ -6658,7 +6658,7 @@
 		)
 		(uuid "31a428f5-4625-4865-b0ff-0267a76ecce0")
 	)
-	(hierarchical_label "IN_SDI"
+	(hierarchical_label "SDI"
 		(shape input)
 		(at 24.13 142.24 180)
 		(effects
@@ -6713,7 +6713,7 @@
 		)
 		(uuid "7063a726-71b3-4b00-9c7b-67202fea2643")
 	)
-	(hierarchical_label "SDI"
+	(hierarchical_label "SD1"
 		(shape output)
 		(at 123.19 154.94 0)
 		(effects

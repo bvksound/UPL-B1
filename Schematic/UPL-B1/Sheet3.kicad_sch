@@ -8922,7 +8922,7 @@
 		(uuid "8a1e10c6-e9ff-4bf4-9316-dd8af25a5107")
 	)
 	(hierarchical_label "ALC"
-		(shape output)
+		(shape input)
 		(at 566.42 110.49 0)
 		(effects
 			(font
