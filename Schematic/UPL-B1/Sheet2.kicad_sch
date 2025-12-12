@@ -4438,7 +4438,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Renamed, beacuse \n/WR and /WR are \nobviously buffered here!"
+	(text "Renamed, because \n/WR and /WR are \nobviously buffered here!"
 		(exclude_from_sim no)
 		(at 24.384 182.88 0)
 		(effects

@@ -9845,7 +9845,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Axial_L22.0mm_D9.5mm_P27.50mm_Horizontal"
+		(property "Footprint" "Capacitor_THT:C_Axial_L17.0mm_D7.0mm_P25.00mm_Horizontal"
 			(at 355.6 39.37 0)
 			(effects
 				(font
