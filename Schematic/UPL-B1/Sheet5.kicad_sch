@@ -9572,7 +9572,7 @@
 		)
 		(uuid "1fbcfc3a-72db-4f4b-b806-d2b6f4e6b10c")
 	)
-	(hierarchical_label "LOFREQ"
+	(hierarchical_label "LDFREQ"
 		(shape output)
 		(at 317.5 283.21 0)
 		(effects

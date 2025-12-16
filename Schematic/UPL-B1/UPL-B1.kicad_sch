@@ -1914,7 +1914,7 @@
 		(at 440.69 72.136 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 3.048 3.048)
 			)
 		)
 		(uuid "306810d3-b03b-496a-952c-b09f27ceb68d")
@@ -1924,7 +1924,7 @@
 		(at 221.742 72.898 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 3.048 3.048)
 			)
 		)
 		(uuid "30edecdb-d8aa-4557-bd9a-659317179315")
@@ -2124,7 +2124,7 @@
 		(at 117.856 73.152 0)
 		(effects
 			(font
-				(size 1.524 1.524)
+				(size 3.048 3.048)
 			)
 		)
 		(uuid "68686d5b-9cc7-476d-832e-f9afaa79bdbb")
@@ -2514,7 +2514,7 @@
 		(at 225.552 187.706 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 3.048 3.048)
 			)
 		)
 		(uuid "fc9142ac-95f1-434f-84fd-a39a6f50d6c6")
@@ -7533,7 +7533,7 @@
 		)
 		(uuid "95051550-9fea-4b62-a661-e9024b5b5d8e")
 	)
-	(label "LOFREQ"
+	(label "LDFREQ"
 		(at 459.74 281.94 0)
 		(effects
 			(font

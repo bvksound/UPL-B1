@@ -3135,6 +3135,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+5VA"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5VA"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5VA\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5VA_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5VA_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:-VDC"
 			(power)
 			(pin_numbers
@@ -4035,6 +4160,16 @@
 	)
 	(wire
 		(pts
+			(xy 24.13 227.33) (xy 24.13 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a2e0930-b0f2-4d1a-b1b8-1b8e0c4e2ea6")
+	)
+	(wire
+		(pts
 			(xy 356.87 93.98) (xy 359.41 93.98)
 		)
 		(stroke
@@ -4112,6 +4247,16 @@
 			(type default)
 		)
 		(uuid "17de30e2-9c8a-4ce4-a91c-70ba65a0dbd7")
+	)
+	(wire
+		(pts
+			(xy 24.13 231.14) (xy 26.67 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19dd6aff-146e-4f70-9ef9-4c83b38f9277")
 	)
 	(wire
 		(pts
@@ -6022,16 +6167,6 @@
 			(type default)
 		)
 		(uuid "e6324a8c-9847-4b42-9028-99cfbfa5492b")
-	)
-	(wire
-		(pts
-			(xy 25.4 231.14) (xy 26.67 231.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6d94c1d-a6d7-4bd7-bfc1-3a1f02a82ae2")
 	)
 	(wire
 		(pts
@@ -12749,73 +12884,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 25.4 231.14 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d9e9b83e-8f09-4377-a137-bfff4163a657")
-		(property "Reference" "#PWR025"
-			(at 29.21 231.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 21.59 231.1401 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 25.4 231.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 25.4 231.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 25.4 231.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "04faa2be-e801-47fb-97a0-43f4b3b4c7ca")
-		)
-		(instances
-			(project "UPL_B1"
-				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d/5c1faa4b-2306-4f0f-97e7-c76d1ee80adb"
-					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 96.52 49.53 90)
 		(unit 1)
@@ -13349,6 +13417,72 @@
 			(project "UPL_B1"
 				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d/5c1faa4b-2306-4f0f-97e7-c76d1ee80adb"
 					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5VA")
+		(at 24.13 227.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ebb1fdb5-0b17-4a8a-8612-9e51f86cc7bd")
+		(property "Reference" "#PWR020"
+			(at 24.13 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5VA"
+			(at 24.13 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 24.13 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 24.13 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 24.13 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2b5e74af-7e10-4735-a429-bc275016c3ab")
+		)
+		(instances
+			(project "UPL-B1"
+				(path "/812de09b-8b67-463d-bf96-bb3aeeb1ed8d/5c1faa4b-2306-4f0f-97e7-c76d1ee80adb"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
