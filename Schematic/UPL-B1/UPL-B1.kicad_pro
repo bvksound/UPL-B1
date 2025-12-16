@@ -660,11 +660,11 @@
     "meta": {
       "version": 1
     },
-    "net_format_name": "",
+    "net_format_name": "SPICE",
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "b1.pdf",
     "space_save_all_events": true,
-    "spice_current_sheet_as_root": false,
+    "spice_current_sheet_as_root": true,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
     "spice_save_all_currents": false,
