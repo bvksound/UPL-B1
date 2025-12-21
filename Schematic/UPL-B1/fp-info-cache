@@ -1,4 +1,4 @@
-26891921444163648
+26897220416241596
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -440,6 +440,13 @@ LED
 0
 2
 2
+BVKSound
+Logo Peter
+
+
+0
+0
+0
 BVKSound
 MAGJACK
 
@@ -106049,6 +106056,20 @@ Integrated Circuit
 0
 16
 16
+UPL_B1
+BVKSound_Logo
+
+
+0
+0
+0
+UPL_B1
+Logo Peter
+
+
+0
+0
+0
 UPL_B1
 SOIC127P1032X265-16N
 R-16 (SOIC) Wide1
