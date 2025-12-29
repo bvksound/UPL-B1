@@ -8171,7 +8171,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TYCO_5102159-8"
+		(property "Footprint" "UPL_B1:CONN_5103311-7_TYC"
 			(at 100.33 380.67 0)
 			(effects
 				(font
@@ -9801,7 +9801,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Sheet4.kicad_sch"
+		(property "Sheetfile" "Integrator 2.kicad_sch"
 			(at 91.44 131.3946 0)
 			(effects
 				(font
@@ -9933,7 +9933,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Sheet5.kicad_sch"
+		(property "Sheetfile" "Level Control (ALC).kicad_sch"
 			(at 194.31 301.5746 0)
 			(effects
 				(font
@@ -10044,7 +10044,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Sheet3.kicad_sch"
+		(property "Sheetfile" "Integrator 1 & Loop Inverter.kicad_sch"
 			(at 194.31 1823.212 0)
 			(effects
 				(font
@@ -10216,7 +10216,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Sheet2.kicad_sch"
+		(property "Sheetfile" "Output IMD Attenuator.kicad_sch"
 			(at 400.05 159.3346 0)
 			(effects
 				(font
