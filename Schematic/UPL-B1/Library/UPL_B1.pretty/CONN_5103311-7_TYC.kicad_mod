@@ -667,7 +667,7 @@
 		(uuid "de812c04-6f74-46cf-8abb-f68c03385c9d")
 	)
 	(embedded_fonts no)
-	(model "/Users/bart/Downloads/5103311-7/3D/5103311-7.stp"
+	(model "${KIPRJMOD}/Library/3D/5103311-7.stp"
 		(offset
 			(xyz 20.3 9.6 4.5)
 		)
