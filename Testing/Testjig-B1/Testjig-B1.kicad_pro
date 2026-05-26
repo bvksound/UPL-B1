@@ -416,7 +416,7 @@
         "uuid": "ac0bcd9a-6984-47ed-9080-83e8edfb761b"
       }
     ],
-    "used_designators": "#PWR7-11,F1-5,D11-12,C6-11",
+    "used_designators": "A1,R3-12,#PWR12-17,U6-9",
     "variants": []
   },
   "sheets": [
@@ -427,6 +427,14 @@
     [
       "af35ebb4-6c8a-4e10-a66f-24caa5f171b3",
       "Power"
+    ],
+    [
+      "56938591-494f-43cd-ba56-dd8a6df5dc2e",
+      "Level Shifter"
+    ],
+    [
+      "3e980933-0fed-482d-9d01-6233af794343",
+      "CPU"
     ]
   ],
   "text_variables": {},
