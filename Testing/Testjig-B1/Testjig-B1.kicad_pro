@@ -70,7 +70,100 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "courtyards_overlap|172577496|67857548|ea59b124-38cb-41fa-b4c8-fb25e6837dd6|fff55531-d3f5-4b1b-a73f-9238113835c1",
+          ""
+        ],
+        [
+          "courtyards_overlap|172577496|95543548|705ff6cf-38d0-4bb8-9d6b-ae3c2c7aa32e|c87a5ba6-788f-4185-bc33-74affb9ec53e",
+          ""
+        ],
+        [
+          "silk_over_copper|159672749|96703503|3f8520ae-841a-4eb7-9b16-15fcb8cae1e9|e01a8eb5-69d1-4c96-925d-56a208356bae",
+          ""
+        ],
+        [
+          "silk_over_copper|159772935|97009000|2b31d346-0721-4dd3-b625-08ec1941eb6e|e01a8eb5-69d1-4c96-925d-56a208356bae",
+          ""
+        ],
+        [
+          "silk_over_copper|159870000|69450000|ebbbcf4e-9a8a-4db4-a96d-46c308a393a8|cf26925b-bd83-485d-a5df-7c9992face12",
+          ""
+        ],
+        [
+          "silk_over_copper|160252000|69114000|8c8a9b81-808c-4111-aae7-7a12e1aa1037|cf26925b-bd83-485d-a5df-7c9992face12",
+          ""
+        ],
+        [
+          "starved_thermal|121450000|59690000|134d3ea8-d984-45cc-8963-34cd352ed4b8|4e9c1804-1adb-4ca2-a087-040ce9a9c0b2|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|121450000|72390000|134d3ea8-d984-45cc-8963-34cd352ed4b8|74b7f6cb-0f27-4ac0-a284-a10d93ddadc4|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|121450000|85090000|134d3ea8-d984-45cc-8963-34cd352ed4b8|ecca1899-d25c-474e-be27-31ae5dc7d151|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|121450000|97790000|134d3ea8-d984-45cc-8963-34cd352ed4b8|193d6e54-45ab-4760-b600-b7bb1a936758|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|122250000|59690000|134d3ea8-d984-45cc-8963-34cd352ed4b8|4a78b731-5602-490e-b6ec-bbd1dfe25aa6|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|122250000|72390000|134d3ea8-d984-45cc-8963-34cd352ed4b8|0f62ba09-bb8d-4668-8413-33df3ea30a0d|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|122250000|85090000|134d3ea8-d984-45cc-8963-34cd352ed4b8|808c3b09-5f88-4a65-8e9b-31ee5450aa0a|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|122250000|97790000|134d3ea8-d984-45cc-8963-34cd352ed4b8|c045c32b-0be2-4930-ab99-f917473a1e4e|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|155405000|69850000|134d3ea8-d984-45cc-8963-34cd352ed4b8|d7467a85-4bfa-4423-988b-93b3f8a14ae2|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|159920000|64770000|134d3ea8-d984-45cc-8963-34cd352ed4b8|bd585170-6286-4a34-a2ad-e0b650567558|B.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|159920000|64770000|134d3ea8-d984-45cc-8963-34cd352ed4b8|bd585170-6286-4a34-a2ad-e0b650567558|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|161192935|97578596|134d3ea8-d984-45cc-8963-34cd352ed4b8|b66c45f7-b730-41c6-a3cf-01584977c80f|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|161290000|69980000|134d3ea8-d984-45cc-8963-34cd352ed4b8|773b40a4-0c1f-40af-9a3b-12e4228909d4|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|165100000|89789000|134d3ea8-d984-45cc-8963-34cd352ed4b8|de890c77-ba6a-48f3-a299-790daf44399a|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|175928679|64001319|134d3ea8-d984-45cc-8963-34cd352ed4b8|debe0c68-431d-4a84-929c-eb3b54b1bf15|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|176028679|91560319|134d3ea8-d984-45cc-8963-34cd352ed4b8|b5f4901b-120b-4b92-b39a-7302632c4fe9|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|198888680|91560319|134d3ea8-d984-45cc-8963-34cd352ed4b8|c246bd79-8aea-477b-99bf-e9757ccfdfa4|F.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -666,7 +759,7 @@
         "uuid": "ac0bcd9a-6984-47ed-9080-83e8edfb761b"
       }
     ],
-    "used_designators": "#PWR32,R10,R17,U10",
+    "used_designators": "J3-4,#PWR32,R10,R17,U10",
     "variants": []
   },
   "sheets": [
