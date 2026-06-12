@@ -2797,6 +2797,12 @@
 		(uuid "97c403e5-f22a-4687-9a01-954202f50a10")
 	)
 	(junction
+		(at 60.96 177.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9f5b70aa-b0f3-41d5-807a-4ef693ef73eb")
+	)
+	(junction
 		(at 110.49 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3013,6 +3019,16 @@
 			(type default)
 		)
 		(uuid "1189a9dd-a86b-43e9-92e8-2751053bf58c")
+	)
+	(wire
+		(pts
+			(xy 60.96 177.8) (xy 113.03 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "142509db-a8ff-451b-a6d9-56e0f38b8986")
 	)
 	(wire
 		(pts
@@ -3286,7 +3302,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 177.8) (xy 113.03 177.8)
+			(xy 52.07 177.8) (xy 60.96 177.8)
 		)
 		(stroke
 			(width 0)
@@ -3833,6 +3849,16 @@
 			(type default)
 		)
 		(uuid "c208d195-2972-463d-be91-da99e98ee81d")
+	)
+	(wire
+		(pts
+			(xy 60.96 177.8) (xy 60.96 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2b326b3-57a3-4bb6-9ab9-50e599a7b2b8")
 	)
 	(wire
 		(pts
@@ -4462,6 +4488,84 @@
 					(justify left top)
 				)
 				(uuid "ca195367-0297-484e-9587-c80ced328971")
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 60.96 180.34 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "017958ab-1212-4dad-b033-a02e15667a36")
+		(property "Reference" "#FLG09"
+			(at 60.96 182.245 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 60.96 185.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 60.96 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "602b2674-71d9-462b-bf8b-316f5cf2eb42")
+		)
+		(instances
+			(project "Testjig-B1"
+				(path "/ac0bcd9a-6984-47ed-9080-83e8edfb761b/af35ebb4-6c8a-4e10-a66f-24caa5f171b3"
+					(reference "#FLG09")
+					(unit 1)
+				)
 			)
 		)
 	)
