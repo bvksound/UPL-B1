@@ -32,5 +32,5 @@ class Testjig:
     def set_state(self):
         self.check_ranges()
         for name, value in self.vars.items():
-            print(self.board.exec(f"{name}={value}"))
-        self.board.exec("write_B1()")
+            self.board.exec(f"{name}={value}")
+        print(self.board.exec("write_B1()"))
