@@ -43,50 +43,22 @@ def make_command_word():
     control_reg = sum(
         [1 if imd_atten else 0, 4 if lofilt else 0, 127 if freq_ena else 0]
     )
-    formatting = (
-        (control_reg, "CMD", 8),
-        (imd_gain, "IMD-Gain", 12),
-        (freq_tune, "FreqTune", 12),
-        (freq_range, "FreqRange", 4),
-        (freq_coarse, "FreqCoarse", 4),
-        (gain_adj, "GainAdj", 12),
-        (control_reg, "ControlReg", 8),
+    cmd_word = (
+        control_reg
+        | ((gain_adj & 0xFFF) << 8)
+        | ((freq_coarse & 0x15) << 20)
+        | ((freq_range & 0x5) << 24)
+        | ((freq_tune & 0xFFF) << 30)
+        | ((imd_atten & 0xFFF) << 40)
     )
-    # cmd_word = (
-    #    control_reg + gain_adj
-    #    << 8 + freq_coarse
-    #    << 20 + freq_range
-    #    << 24 + freq_tune
-    #    << 30 + imd_atten
-    #    << 40
-    # )
-    # Shift in bits for board ID
-    cmd_bits = "0" * 8
-    # Now the IMD Atten
-    cmd_bits = f"{imd_gain:012b}" + cmd_bits
-    # Freq tune next
-    cmd_bits = f"{freq_tune:012b}" + cmd_bits
-    # Freq range
-    cmd_bits = f"{freq_range:04b}" + cmd_bits
-    # Freq coarse
-    cmd_bits = f"{freq_coarse:04b}" + cmd_bits
-    # Gain adjust
-    cmd_bits = f"{gain_adj:012b}" + cmd_bits
-    # Control reg last
-    cmd_bits = f"{control_reg:08b}" + cmd_bits
-
-    v = 0
-    for bit in cmd_bits:
-        v = v << 1
-        if bit == "1":
-            v |= 1
-    cmd_word = struct.pack("<Q", v)
+    cmd_bytes = struct.pack(">Q", cmd_word)
     # cmd_word = struct(
-    return cmd_bits, cmd_word
+    return bin(cmd_word), cmd_bytes
 
 
 def write_B1():
     bits, data = make_command_word()
+    print(bits)
     WR1.off()
     spi.write(data)
     WR1.on()
