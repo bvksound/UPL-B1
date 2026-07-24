@@ -1,5 +1,24 @@
 import struct
 
+from machine import SPI, Pin
+
+WR1 = Pin(13, Pin.OUT)
+RD1 = Pin(5, Pin.OUT)
+ENABLE = Pin(4, Pin.OUT)
+
+spi = SPI(1, 10_000_000, sck=Pin(14), mosi=Pin(15), miso=Pin(12))
+spi = SPI(
+    0,
+    baudrate=80_000_000,
+    polarity=0,
+    phase=0,
+    bits=8,
+    sck=Pin(6),
+    mosi=Pin(7),
+    miso=Pin(4),
+)
+
+
 imd_atten = False
 lofilt = False
 filt = False
@@ -58,7 +77,3 @@ def make_command_word():
     cmd_word = struct.pack("<Q", v)
     # cmd_word = struct(
     return cmd_bits, cmd_word
-
-
-tmp = make_command_word()
-print(tmp, len(tmp))
