@@ -1,22 +1,28 @@
 import struct
 
-from machine import SPI, Pin
+from machine import Pin, SoftSPI
 
 WR1 = Pin(13, Pin.OUT)
 RD1 = Pin(5, Pin.OUT)
 ENABLE = Pin(4, Pin.OUT)
 
-spi = SPI(1, 10_000_000, sck=Pin(14), mosi=Pin(15), miso=Pin(12))
-spi = SPI(
-    0,
-    baudrate=80_000_000,
-    polarity=0,
+# construct a SoftSPI bus on the given pins
+# polarity is the idle state of SCK
+# phase=0 means sample on the first edge of SCK, phase=1 means the second
+spi = SoftSPI(
+    baudrate=500_000,
+    polarity=1,
     phase=0,
+    sck=Pin(14),
+    mosi=Pin(11),
+    miso=Pin(12),
     bits=8,
-    sck=Pin(6),
-    mosi=Pin(7),
-    miso=Pin(4),
 )
+
+
+WR1 = Pin(13, Pin.OUT)
+RD1 = Pin(5, Pin.OUT)
+ENABLE = Pin(4, Pin.OUT)
 
 
 imd_atten = False
@@ -64,7 +70,7 @@ def make_command_word():
     cmd_bits = f"{freq_range:04b}" + cmd_bits
     # Freq coarse
     cmd_bits = f"{freq_coarse:04b}" + cmd_bits
-    # Freq coarse
+    # Gain adjust
     cmd_bits = f"{gain_adj:012b}" + cmd_bits
     # Control reg last
     cmd_bits = f"{control_reg:08b}" + cmd_bits
@@ -77,3 +83,10 @@ def make_command_word():
     cmd_word = struct.pack("<Q", v)
     # cmd_word = struct(
     return cmd_bits, cmd_word
+
+
+def write_B1():
+    bits, data = make_command_word()
+    WR1.off()
+    spi.write(data)
+    WR1.on()
