@@ -8,6 +8,7 @@ class Testjig:
         self.board.enter_raw_repl()
         # First upload all our control code to the microcontroller
         self.board.execfile("micropython/b1_control.py")
+        self.board.exec("ENABLE.on()")
         self.vars = {
             "imd_atten": False,
             "lofilt": False,
@@ -22,7 +23,7 @@ class Testjig:
     def check_ranges(self):
         max_12bit = 2**12
         assert -1 < self.vars["freq_range"] < max_12bit
-        assert -1 < self.vars["freq_coarse"] < 9
+        assert -1 < self.vars["freq_coarse"] < 16
         assert -1 < self.vars["gain_adj"] < max_12bit
         assert self.vars["filt"] in [True, False]
         assert self.vars["imd_atten"] in [True, False]
@@ -33,4 +34,4 @@ class Testjig:
         self.check_ranges()
         for name, value in self.vars.items():
             self.board.exec(f"{name}={value}")
-        print(self.board.exec("write_B1()"))
+        self.board.exec("write_B1()")
