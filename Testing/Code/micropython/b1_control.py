@@ -45,11 +45,11 @@ def make_command_word():
     )
     cmd_word = (
         control_reg
-        | ((gain_adj & 0xFFF) << 8)
-        | ((freq_coarse & 0x15) << 20)
-        | ((freq_range & 0x5) << 24)
-        | ((freq_tune & 0xFFF) << 30)
-        | ((imd_atten & 0xFFF) << 40)
+        | ((gain_adj & 0xFFF) << 8)  # D30/D40: Gain adjust
+        | ((freq_coarse & 0xF) << 20)  # D31/D41 4 bit range selection
+        | ((freq_range & 0x7) << 24)  # D31/D41 Uses only 3 bits!
+        | ((freq_tune & 0xFFF) << 30)  # D32: Loop gain
+        | ((imd_atten & 0xFFF) << 40)  # D22: IMD attenuator
     )
     cmd_bytes = struct.pack(">Q", cmd_word)
     # cmd_word = struct(
