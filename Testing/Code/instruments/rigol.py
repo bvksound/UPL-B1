@@ -57,11 +57,15 @@ class RigolScope:
             time.sleep(0.1)
         time.sleep(0.5)
 
-    def timebase(self, scale):
+    def timebase(self, scale, left=False):
         self.inst.write(f":TIMebase:MAIN:SCALe {scale}")
+        if left:
+            # The scope has 6 graticules to the left of 0, so 5 is a good guess
+            offset = 5 * scale
+            self.inst.write(f":TIMebase:MAIN:OFFSET {offset}")
 
     def read_waveform(self, channel):
-        self.inst.write("STOP")
+        self.inst.write(":STOP")
         self.inst.write(f":WAV:SOUR CHAN{channel}")
         self.inst.write(":WAV:MODE NORM")
         self.inst.write(":WAV:FORM BYTE")
@@ -75,6 +79,7 @@ class RigolScope:
         wave = wave.astype("f")
         wave = wave - 127
         wave = wave * yinc
+        self.inst.write(":RUN")
         return xinc, wave
 
     def clean(self):
