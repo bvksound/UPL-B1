@@ -20,7 +20,28 @@ jig = Testjig("/dev/ttyACM0")
 freq = 0
 
 
-for freq_range in [2, 4]:
+def measure_settling_time(freq_range, coarse, gain, tune):
+    rigol.set_trigger(3, level=0.1, slope="POSITIVE", mode="NORMAL")
+    rigol.clear()
+    jig.vars["freq_range"] = freq_range
+    jig.vars["gain"] = gain
+    jig.vars["freq_coarse"] = coarse
+    jig.vars["tune"] = tune
+    jig.set_state()
+    # Now we
+
+
+# Set some known state on the B1 so we get (some) output
+jig.set_state()
+
+# Set up scope, first
+rigol.set_trigger(1, 0, slope="POSITIVE", mode="AUTO")
+rigol.channel(1, "DC", display=True, scale=1, offset=0)
+rigol.channel(2, "DC", display=True, scale=1, offset=0)
+rigol.channel(3, "DC", display=True, scale=0.5, offset=0)
+rigol.channel(4, "DC", display=True, scale=0.5, offset=0)
+
+for freq_range in [0, 1, 2, 4]:
     jig.vars["freq_range"] = freq_range
     for coarse in range(16):
         jig.vars["freq_coarse"] = coarse
