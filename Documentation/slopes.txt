@@ -1,0 +1,6 @@
+These are the slopes for the control signals in the given ranges:
+
+f0(coarse, gain) = 113641.17353320593 - 7.10216132e+03*coarse - 1.74060433*gain
+f1(coarse, gain) = 23083.699419697707 - 1.44206219e+03*coarse - 3.54528379e-01*gain
+f2(coarse, gain) = 1886.8142519086555 - 1.17938266e+02*coarse - 2.89889175e-02*gain
+f4(coarse, gain) = 93.33078660562637 - 1.20793090e+01*coarse - 2.95406651e-03*gain
