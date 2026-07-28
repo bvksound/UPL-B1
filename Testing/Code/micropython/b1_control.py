@@ -48,7 +48,7 @@ def make_command_word():
         | ((gain_adj & 0xFFF) << 8)  # D30/D40: Gain adjust
         | ((freq_coarse & 0xF) << 20)  # D31/D41 4 bit range selection
         | ((freq_range & 0x7) << 24)  # D31/D41 Uses only 3 bits!
-        | ((freq_tune & 0xFFF) << 30)  # D32: Loop gain
+        | ((freq_tune & 0xFFF) << 28)  # D32: Fine tuning
         | ((imd_atten & 0xFFF) << 40)  # D22: IMD attenuator
     )
     cmd_bytes = struct.pack(">Q", cmd_word)
