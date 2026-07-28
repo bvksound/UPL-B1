@@ -5562,8 +5562,8 @@
 		(uuid "f3ecbeb8-cacf-4082-b99f-eb911b1baec2")
 	)
 	(rectangle
-		(start 327.66 115.062)
-		(end 399.542 161.798)
+		(start 327.66 109.982)
+		(end 399.542 199.39)
 		(stroke
 			(width 0)
 			(type dot)
@@ -5575,7 +5575,7 @@
 	)
 	(text "Regler\nStabilizer"
 		(exclude_from_sim no)
-		(at 364.744 112.268 0)
+		(at 364.236 106.934 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5755,6 +5755,17 @@
 			)
 		)
 		(uuid "bc4eb7b7-84e3-4830-afb5-fb4b4aca3a93")
+	)
+	(text "Is Drain/Source wired up correctly on V504/V510/V512?"
+		(exclude_from_sim no)
+		(at 246.126 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 43 1)
+			)
+		)
+		(uuid "bfb71e59-ba01-4a82-929b-f96f369ccec5")
 	)
 	(text "Pegelregler\nLevel control"
 		(exclude_from_sim no)
