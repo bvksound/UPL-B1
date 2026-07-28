@@ -64,6 +64,9 @@ class RigolScope:
             offset = 5 * scale
             self.inst.write(f":TIMebase:MAIN:OFFSET {offset}")
 
+    def run(self):
+        self.inst.write(":RUN")
+
     def read_waveform(self, channel):
         self.inst.write(":STOP")
         self.inst.write(f":WAV:SOUR CHAN{channel}")
@@ -79,7 +82,7 @@ class RigolScope:
         wave = wave.astype("f")
         wave = wave - 127
         wave = wave * yinc
-        self.inst.write(":RUN")
+        self.run()
         return xinc, wave
 
     def clean(self):
@@ -90,25 +93,34 @@ class RigolScope:
         self.inst.write(":AUToscale")
         time.sleep(20)
 
-    def measure_rms(self, channel):
+    def measure_rms(self, channel, tries=3):
         #        self.inst.write(f":MEASure:SOURce CHAN{channel}")
         #        self.inst.write(f":MEASure:ITEM VRMS,CHAN{channel}")
         response = self.inst.query(f":MEASure:ITEM? VRMS,CHAN{channel}")
-        return float(response.strip())
+        value = float(response.strip())
+        if value > 1e32 and tries:
+            time.sleep(0.5)
+            return self.measure_rms(channel, tries - 1)
+        return value
 
-    def measure_avg(self, channel):
+    def measure_avg(self, channel, tries=3):
         #        self.inst.write(f":MEASure:SOURce CHAN{channel}")
         #        self.inst.write(f":MEASure:ITEM VRMS,CHAN{channel}")
         response = self.inst.query(f":MEASure:ITEM? VAVG,CHAN{channel}")
-        return float(response.strip())
+        value = float(response.strip())
+        if value > 1e32 and tries:
+            time.sleep(0.5)
+            return self.measure_rms(channel, tries - 1)
+        return value
 
     def measure_freq(self, channel):
         #        self.inst.write(f":MEASure:SOURce CHAN{channel}")
         self.inst.write(f":MEASure:COUNter CHAN{channel}")
         response = self.inst.query(":MEASure:COUNter:VALue?")
-        freq = float(response.strip())
-        if freq > 1e36:
-            return self.measure_freq(channel)
+        try:
+            freq = float(response.strip())
+        except ValueError:
+            return -1
         if freq == 0:
             response = self.inst.query(f":MEASure:ITEM? FREQ,CHAN{channel}")
             freq = float(response.strip())

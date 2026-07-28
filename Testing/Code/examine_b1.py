@@ -34,28 +34,33 @@ def measure_settling_time(freq_range, coarse, gain, tune):
     rigol.channel(2, display=False)
     rigol.channel(3, display=True, coupling="DC", scale=1, offset=1)
     rigol.channel(4, display=True, coupling="DC", scale=1, offset=-1)
-    rigol.timebase(1e-3, left=True)
-    time.sleep(1)
-    rigol.clear()
+    rigol.timebase(10e-3, left=True)
+    rigol.clean()
+    rigol.run()
+    time.sleep(5)
     jig.vars["freq_range"] = freq_range
     jig.vars["gain"] = gain
     jig.vars["freq_coarse"] = coarse
     jig.vars["tune"] = tune
     jig.set_state()
+    print("lets go")
+    time.sleep(10)
     # Now we get a waveform reading
-    yinc, wave = rigol.read_waveform()
+    print("reading wave")
+    yinc, wave = rigol.read_waveform(3)
+    print("done")
 
     # We need to determine the output signal frequency, too
     rigol.channel(2, display=True, coupling="DC", scale=1)
     out_freq = rigol.measure_freq(2)
+    print(wave)
 
-    settling = lowpass(wave, out_freq / 2, 1 / yinc)
+    #settling = lowpass(wave, out_freq / 2, 1 / yinc)
     # Find maximum of the signal
-    peak = max(settling)
-    peak_pos = np.argmax(settling)
+    #peak = max(settling)
+    #peak_pos = np.argmax(settling)
     # Find time signal has stopped oscillation
     # Now lowpass-filter the signal in order to only see the settling
-
 
 def measure_frequency_response():
     # Set up scope, first
@@ -67,35 +72,40 @@ def measure_frequency_response():
 
     freq = 0
     for freq_range in [0, 1, 2, 4]:
+        if freq_range == 0:
+            rigol.timebase(10e-6)
+        if freq_range == 1:
+            rigol.timebase(100e-6)
+        if freq_range == 2:
+            rigol.timebase(2e-3)
+        if freq_range == 4:
+            rigol.timebase(.05)
         jig.vars["freq_range"] = freq_range
         for coarse in range(16):
             jig.vars["freq_coarse"] = coarse
-            for gain in range(100, 0x1000, 0x1FF):
+            for gain in range(100, 0xF00, 0x1FF):
                 jig.vars["gain_adj"] = gain
                 jig.vars["imd_gain"] = gain
-                for tune in range(100, 0x1000, 0x1FF):
+                for tune in range(100, 0xF00, 0x1FF):
                     jig.vars["freq_tune"] = tune
                     jig.set_state()
+                    rigol.clean()
                     time.sleep(0.1)
                     # Measure an average of five samples
 
                     # Let the hardware settle for a bit (100 waves at least)
                     trigger = 1
                     scale = 2
+                    freq = 1e33
+                    rigol.set_trigger(trigger, mode="NORMAL")
                     while not (1 < freq < 1e6):
-                        print(trigger, flush=True)
-                        rigol.set_trigger(trigger, mode="NORMAL")
                         rigol.channel(1, scale=scale, offset=0)
                         rigol.channel(2, scale=scale, offset=0)
                         time.sleep(1)
+                        scale /= 2
                         freq = rigol.measure_freq(1)
-                        if trigger == 1:
-                            trigger = 2
-                        else:
-                            trigger = 1
-                            scale /= 2
-                            if scale < 0.5:
-                                scale = 0.2
+                        if scale < 100e-3:
+                            break
 
                     time.sleep(100 / freq)
 
@@ -132,3 +142,4 @@ def measure_frequency_response():
 jig.set_state()
 
 measure_frequency_response()
+# measure_settling_time(2, 5, 0x200, 0x200)
