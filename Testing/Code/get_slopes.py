@@ -8,6 +8,11 @@ control = pd.read_csv("../../Documentation//frequency_control.csv", sep=";")
 for column in control.columns:
     control.loc[control[column] > 9e32] = np.nan
 
+# Mark all sudden jumps in frequency bad
+control["delta"] = control["freq / Hz"].diff()
+control.loc[control["delta"].abs() > control["freq / Hz"], "freq / Hz"] = np.nan
+
+control = control.dropna()
 
 # Do an individual fit for each range
 for range in [0, 1, 2, 4]:
