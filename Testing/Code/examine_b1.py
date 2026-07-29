@@ -62,6 +62,7 @@ def measure_settling_time(freq_range, coarse, gain, tune):
     # Find time signal has stopped oscillation
     # Now lowpass-filter the signal in order to only see the settling
 
+
 def measure_frequency_response():
     # Set up scope, first
     rigol.set_trigger(2, 0, slope="POSITIVE", mode="NORMAL")
@@ -142,4 +143,3 @@ def measure_frequency_response():
 jig.set_state()
 
 measure_frequency_response()
-# measure_settling_time(2, 5, 0x200, 0x200)

@@ -1,16 +1,20 @@
+import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
+control = pd.read_csv("../../Documentation//frequency_control.csv", sep=";")
 
-control = pd.read_csv("./frequency_control.csv", sep=";")
+# Mark bad readings
+for column in control.columns:
+    control.loc[control[column] > 9e32] = np.nan
 
-# Fit where tune is about centered (2144)
+
 # Do an individual fit for each range
 for range in [0, 1, 2, 4]:
-    data = control[(control["tune"] == 2144) & (control["range / 1"] == range)]
+    data = control[(control["range / 1"] == range)]
     lr = LinearRegression()
-    lr.fit(data[["coarse / 1", "gain / 1"]], data["freq / Hz"])
-
+    lr.fit(data[["coarse / 1", "gain / 1", "tune"]], data["freq / Hz"])
+    coef = lr.coef_.round(4)
     print(
-        f"f{range}(coarse, gain) = {lr.intercept_}  {lr.coef_[0]}*coarse {lr.coef_[1]}*gain",
+        f"f{range}(coarse, gain) = {round(lr.intercept_,4)}  {coef[0]}*coarse {coef[1]}*gain {coef[2]}*tune",
     )
