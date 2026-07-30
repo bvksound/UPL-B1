@@ -1,26 +1,28 @@
 import logging
 import time
-
+import universal_usbtmc
 import numpy as np
 
+tmc = universal_usbtmc.import_backend("linux_kernel")
 
 class RigolScope:
     def __init__(self, rm):
-        self.inst = rm.open_resource("USB0::6833::1230::DS1ZA254103299::0::INSTR")
+        self.inst = tmc.Instrument("/dev/usbtmc0")
+        #self.inst = rm.open_resource("TCPIP0::10.0.0.62::INSTR")
         # self.inst.baud_rate = 115200
         # self.inst.data_bits = 8
 
     def read_binary(self):
         # Pull the exact unparsed byte array straight out of the USB buffer
-        raw_bytes = self.inst.read_raw()
+        raw_bytes = self.inst.read_raw(2)
         logging.debug(f"Bytes received from self.inst: {len(raw_bytes)}")
 
         # 5. Manually slice away Rigol's IEEE 488.2 block header
         # Format is '#9000001200...' where 9 implies a 9-digit length descriptor
         if raw_bytes.startswith(b"#"):
-            header_length = 2 + int(chr(raw_bytes[1]))  # Typically 11 bytes total
-            waveform_data = raw_bytes[header_length:]
-
+            header_length = int(chr(raw_bytes[1]))  # Typically 11 bytes total
+            datalen = int(self.inst.read_raw(header_length))
+            waveform_data = self.inst.read_raw(datalen)
             # Trim off any occasional trailing characters if they exist
             if waveform_data.endswith(b"\n"):
                 waveform_data = waveform_data[:-1]
@@ -67,22 +69,31 @@ class RigolScope:
     def run(self):
         self.inst.write(":RUN")
 
-    def read_waveform(self, channel):
+    def stop(self):
         self.inst.write(":STOP")
+
+    def take_screenshot(self):
+        self.inst.write(":DISP:DATA? ON,0,PNG")
+        time.sleep(.1)
+        return self.read_binary()
+
+    def read_waveform(self, channel):
+        self.stop()
+        time.sleep(.1)
         self.inst.write(f":WAV:SOUR CHAN{channel}")
         self.inst.write(":WAV:MODE NORM")
-        self.inst.write(":WAV:FORM BYTE")
+        self.inst.write(":WAV:FORM BIN")
         yinc = float(self.inst.query(":WAVeform:YINCrement?"))
         xinc = float(self.inst.query(":WAVeform:XINCrement?"))
         yorigin = float(self.inst.query(":WAVeform:YORigin?"))
+        self.inst.read_termination = None
+        time.sleep(.5)
         self.inst.write(":WAV:DATA?")
-        time.sleep(0.5)  # Give the Rigol processor a moment to buffer
         raw_data = self.read_binary()
         wave = np.frombuffer(raw_data, dtype=np.uint8)
         wave = wave.astype("f")
         wave = wave - 127
         wave = wave * yinc
-        self.run()
         return xinc, wave
 
     def clean(self):
