@@ -1,9 +1,10 @@
 import time
 
-import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import pyvisa
 import scipy.signal
+import universal_usbtmc.exceptions
 
 from instruments.rigol import RigolScope
 from upl_control import Testjig
@@ -27,34 +28,40 @@ def lowpass(data: np.ndarray, cutoff: float, sample_rate: float, poles: int = 5)
     return filtered_data
 
 
-def measure_settling_time(freq_range, coarse, gain, tune):
+def measure_settling_time(from_range, to_range, coarse, gain, tune):
     # Set up measurement
-    rigol.set_trigger(3, level=1, slope="POSITIVE", mode="NORMAL")
+    if to_range == 0:
+        rigol.timebase(200e-6, left=True)
+    if to_range == 1:
+        rigol.timebase(10e-3, left=True)
+    if to_range == 2:
+        rigol.timebase(100e-3, left=True)
+    if to_range == 4:
+        rigol.timebase(500e-3, left=True)
+    rigol.set_trigger(3, level=.5, slope="NEGATIVE", mode="NORMAL")
     rigol.channel(1, display=False)
     rigol.channel(2, display=False)
     rigol.channel(3, display=True, coupling="DC", scale=1, offset=1)
     rigol.channel(4, display=True, coupling="DC", scale=1, offset=-1)
-    rigol.timebase(10e-3, left=True)
-    rigol.clean()
-    rigol.run()
-    time.sleep(5)
-    jig.vars["freq_range"] = freq_range
+    rigol.stop()
+    jig.vars["freq_range"] = from_range 
     jig.vars["gain"] = gain
     jig.vars["freq_coarse"] = coarse
     jig.vars["tune"] = tune
     jig.set_state()
-    print("lets go")
+    time.sleep(2)
+    jig.vars["gain"] = gain
+    rigol.clean()
+    rigol.run()
+    time.sleep(1)
+    jig.set_state()
     time.sleep(10)
     # Now we get a waveform reading
     print("reading wave")
-    yinc, wave = rigol.read_waveform(3)
+    yinc, wave3 = rigol.read_waveform(3)
+    _, wave4 = rigol.read_waveform(4)
     print("done")
-
-    # We need to determine the output signal frequency, too
-    rigol.channel(2, display=True, coupling="DC", scale=1)
-    out_freq = rigol.measure_freq(2)
-    print(wave)
-
+    return (wave3, wave4, yinc)
     #settling = lowpass(wave, out_freq / 2, 1 / yinc)
     # Find maximum of the signal
     #peak = max(settling)
@@ -80,7 +87,7 @@ def measure_frequency_response():
         if freq_range == 2:
             rigol.timebase(2e-3)
         if freq_range == 4:
-            rigol.timebase(.05)
+            rigol.timebase(.5)
         jig.vars["freq_range"] = freq_range
         for coarse in range(16):
             jig.vars["freq_coarse"] = coarse
@@ -142,4 +149,26 @@ def measure_frequency_response():
 # Set some known state on the B1 so we get (some) output
 jig.set_state()
 
-measure_frequency_response()
+#measure_frequency_response()
+data = {}
+for f in [0, 1, 2, 4]:
+    for t in [0, 1, 2, 4]:
+        try:
+            data[(f,t)] = measure_settling_time(f, t, 5, 0x200, 0x200)
+            with open(f'settle_{f}_{t}.png', 'wb') as out:
+                out.write(rigol.take_screenshot())
+            print(f,t, len(data))
+        except universal_usbtmc.exceptions.UsbtmcReadTimeoutError:
+            print("fail", f, t)
+            continue
+
+df = pd.DataFrame()
+for r in data:
+    ystep = data[r][2]
+    a = pd.DataFrame(data[r][0])
+    b = pd.DataFrame(data[r][1])
+    a[2] = b
+    timestamp = np.arange(0, len(data[r][0])) * ystep
+    a['time'] = timestamp
+    a.set_index(timestamp)
+    a.to_csv(f'settle_{r}.csv')
