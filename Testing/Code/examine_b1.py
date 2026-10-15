@@ -7,6 +7,7 @@ import scipy.signal
 import universal_usbtmc.exceptions
 
 from instruments.rigol import RigolScope
+from UPL import UPL
 from upl_control import Testjig
 
 # Debugging/Diagnostic tool for UPL-B1-Cards
@@ -19,6 +20,7 @@ B1_MAPPING = {1: "P32", 2: "P40", 3: "P53", 4: "P58"}
 rm = pyvisa.ResourceManager()
 
 rigol = RigolScope(rm)
+upl = UPL(addr=20)
 jig = Testjig("/dev/ttyACM0")
 
 
@@ -38,13 +40,13 @@ def measure_settling_time(from_range, to_range, coarse, gain, tune):
         rigol.timebase(100e-3, left=True)
     if to_range == 4:
         rigol.timebase(500e-3, left=True)
-    rigol.set_trigger(3, level=.5, slope="NEGATIVE", mode="NORMAL")
+    rigol.set_trigger(3, level=0.5, slope="NEGATIVE", mode="NORMAL")
     rigol.channel(1, display=False)
     rigol.channel(2, display=False)
     rigol.channel(3, display=True, coupling="DC", scale=1, offset=1)
     rigol.channel(4, display=True, coupling="DC", scale=1, offset=-1)
     rigol.stop()
-    jig.vars["freq_range"] = from_range 
+    jig.vars["freq_range"] = from_range
     jig.vars["gain"] = gain
     jig.vars["freq_coarse"] = coarse
     jig.vars["tune"] = tune
@@ -62,32 +64,41 @@ def measure_settling_time(from_range, to_range, coarse, gain, tune):
     _, wave4 = rigol.read_waveform(4)
     print("done")
     return (wave3, wave4, yinc)
-    #settling = lowpass(wave, out_freq / 2, 1 / yinc)
+    # settling = lowpass(wave, out_freq / 2, 1 / yinc)
     # Find maximum of the signal
-    #peak = max(settling)
-    #peak_pos = np.argmax(settling)
+    # peak = max(settling)
+    # peak_pos = np.argmax(settling)
     # Find time signal has stopped oscillation
     # Now lowpass-filter the signal in order to only see the settling
 
 
-def measure_frequency_response():
-    # Set up scope, first
-    rigol.set_trigger(2, 0, slope="POSITIVE", mode="NORMAL")
-    rigol.channel(1, "DC", display=True, scale=1, offset=0)
-    rigol.channel(2, "DC", display=True, scale=1, offset=0)
-    rigol.channel(3, "DC", display=True, scale=0.5, offset=0)
-    rigol.channel(4, "DC", display=True, scale=0.5, offset=0)
+def run_settling_times():
+    data = {}
+    for f in [0, 1, 2, 4]:
+        for t in [0, 1, 2, 4]:
+            try:
+                data[(f, t)] = measure_settling_time(f, t, 5, 0x200, 0x200)
+                with open(f"settle_{f}_{t}.png", "wb") as out:
+                    out.write(rigol.take_screenshot())
+                print(f, t, len(data))
+            except universal_usbtmc.exceptions.UsbtmcReadTimeoutError:
+                print("fail", f, t)
+                continue
+    df = pd.DataFrame()
+    for r in data:
+        ystep = data[r][2]
+        a = pd.DataFrame(data[r][0])
+        b = pd.DataFrame(data[r][1])
+        a[2] = b
+        timestamp = np.arange(0, len(data[r][0])) * ystep
+        a["time"] = timestamp
+        a.set_index(timestamp)
+        a.to_csv(f"settle_{r}.csv")
 
+
+def measure_frequency_response():
     freq = 0
     for freq_range in [0, 1, 2, 4]:
-        if freq_range == 0:
-            rigol.timebase(10e-6)
-        if freq_range == 1:
-            rigol.timebase(100e-6)
-        if freq_range == 2:
-            rigol.timebase(2e-3)
-        if freq_range == 4:
-            rigol.timebase(.5)
         jig.vars["freq_range"] = freq_range
         for coarse in range(16):
             jig.vars["freq_coarse"] = coarse
@@ -97,7 +108,6 @@ def measure_frequency_response():
                 for tune in range(100, 0xF00, 0x1FF):
                     jig.vars["freq_tune"] = tune
                     jig.set_state()
-                    rigol.clean()
                     time.sleep(0.1)
                     # Measure an average of five samples
 
@@ -105,70 +115,36 @@ def measure_frequency_response():
                     trigger = 1
                     scale = 2
                     freq = 1e33
-                    rigol.set_trigger(trigger, mode="NORMAL")
-                    while not (1 < freq < 1e6):
-                        rigol.channel(1, scale=scale, offset=0)
-                        rigol.channel(2, scale=scale, offset=0)
-                        time.sleep(1)
-                        scale /= 2
-                        freq = rigol.measure_freq(1)
-                        if scale < 100e-3:
-                            break
 
                     time.sleep(100 / freq)
 
-                    rms = {}
-                    avg = {}
-                    freq = 9e99
+                    upl.single_shot()
 
-                    for scale in [2, 1, 0.5, 0.2]:
-                        rigol.channel(1, scale=scale, offset=0)
-                        rigol.channel(2, scale=scale, offset=0)
-                        time.sleep(1)
-                        for channel in [1, 2, 3, 4]:
-                            if channel not in rms or rms[channel] > 1e32:
-                                rms[channel] = rigol.measure_rms(channel)
-                            if channel not in avg or avg[channel] > 1e32:
-                                avg[channel] = rigol.measure_avg(channel)
-                        if freq > 1e35:
-                            freq = rigol.measure_freq(1)
-                        if max(max(max(rms.values()), max(avg.values())), freq) < 1e35:
-                            break
+                    upl.wait_settle()
+
+                    thdn = upl.data[0][0].get()
+                    rms = upl.data[1][0].get()
+                    freq = upl.data[2][0].get()
+
                     print(
                         freq_range,
                         coarse,
                         gain,
                         tune,
                         freq,
-                        *rms.values(),
-                        *avg.values(),
+                        rms,
+                        thdn,
                         flush=True,
                     )
 
 
+# Set up measurement UPL
+upl.channel.set("CH1A")  # Both channels 1+2
+upl.sens[0].set("'THDN'")  # Needs quotes!!!
+upl.sens[1].set("'RMS'")
+upl.sens[2].set("'FREQ'")
+
 # Set some known state on the B1 so we get (some) output
 jig.set_state()
 
-#measure_frequency_response()
-data = {}
-for f in [0, 1, 2, 4]:
-    for t in [0, 1, 2, 4]:
-        try:
-            data[(f,t)] = measure_settling_time(f, t, 5, 0x200, 0x200)
-            with open(f'settle_{f}_{t}.png', 'wb') as out:
-                out.write(rigol.take_screenshot())
-            print(f,t, len(data))
-        except universal_usbtmc.exceptions.UsbtmcReadTimeoutError:
-            print("fail", f, t)
-            continue
-
-df = pd.DataFrame()
-for r in data:
-    ystep = data[r][2]
-    a = pd.DataFrame(data[r][0])
-    b = pd.DataFrame(data[r][1])
-    a[2] = b
-    timestamp = np.arange(0, len(data[r][0])) * ystep
-    a['time'] = timestamp
-    a.set_index(timestamp)
-    a.to_csv(f'settle_{r}.csv')
+# measure_frequency_response()
