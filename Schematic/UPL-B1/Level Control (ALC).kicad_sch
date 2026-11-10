@@ -5650,7 +5650,8 @@
 			(type solid)
 		)
 		(fill
-			(type outline)
+			(type color)
+			(color 0 0 0 0)
 		)
 		(uuid "2b8c7041-00c7-4f59-bef2-0201f5fa144a")
 	)
@@ -5705,7 +5706,8 @@
 			(type solid)
 		)
 		(fill
-			(type outline)
+			(type color)
+			(color 0 0 0 0)
 		)
 		(uuid "36398ced-b291-4ba2-942a-601e46d82de1")
 	)
@@ -5718,7 +5720,8 @@
 			(type solid)
 		)
 		(fill
-			(type outline)
+			(type color)
+			(color 0 0 0 0)
 		)
 		(uuid "385793b4-42f1-4db8-952c-05e967f12937")
 	)
@@ -5731,7 +5734,8 @@
 			(type solid)
 		)
 		(fill
-			(type outline)
+			(type color)
+			(color 0 0 0 0)
 		)
 		(uuid "39cc5773-7ef5-4a3b-b11b-d70927cfd53f")
 	)
@@ -6595,6 +6599,16 @@
 		)
 		(uuid "8f763f03-f772-4d25-92ca-b6ed66b26df5")
 	)
+	(text "This samples the peak of the sine\nwaves precondtioned before."
+		(exclude_from_sim no)
+		(at 308.61 113.792 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8fd66332-24ba-4ec3-818e-7dedc24a781a")
+	)
 	(text "P30\nSIN"
 		(exclude_from_sim no)
 		(at 536.702 18.542 0)
@@ -6625,6 +6639,16 @@
 		)
 		(uuid "92c11c87-23ec-491e-863f-4b4a9be92bc6")
 	)
+	(text "Adds an offset of \nabout +3.7V to COS"
+		(exclude_from_sim no)
+		(at 138.176 112.776 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9c9ad15e-3f56-4306-99a6-75ecf0b85c2b")
+	)
 	(text "SHEET 3"
 		(exclude_from_sim no)
 		(at 567.69 233.68 0)
@@ -6634,6 +6658,16 @@
 			)
 		)
 		(uuid "ad4937e2-f91a-43e5-9f26-3b7b66767b66")
+	)
+	(text "Samples the half-wave from lowest to highest\npoint and keeps the peak."
+		(exclude_from_sim no)
+		(at 212.09 113.538 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "aea430bf-5695-47d1-855b-63c4f4498016")
 	)
 	(text "SHEET 2"
 		(exclude_from_sim no)
@@ -7680,7 +7714,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 119.38) (xy 115.57 119.38)
+			(xy 111.76 119.38) (xy 119.38 119.38)
 		)
 		(stroke
 			(width 0)
@@ -12423,7 +12457,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 119.38) (xy 133.35 119.38)
+			(xy 124.46 119.38) (xy 133.35 119.38)
 		)
 		(stroke
 			(width 0)
@@ -31979,7 +32013,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 118.11 119.38 90)
+		(at 121.92 119.38 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -31989,7 +32023,7 @@
 		(dnp no)
 		(uuid "eaa3efd4-16e0-4ed9-ad67-43daaa91eb86")
 		(property "Reference" "C501"
-			(at 118.11 113.538 90)
+			(at 121.92 113.538 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -31999,7 +32033,7 @@
 			)
 		)
 		(property "Value" "15pF"
-			(at 118.11 116.078 90)
+			(at 121.92 116.078 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32009,7 +32043,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-			(at 118.11 119.38 0)
+			(at 121.92 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32020,7 +32054,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 119.38 0)
+			(at 121.92 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32031,7 +32065,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 118.11 119.38 0)
+			(at 121.92 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
